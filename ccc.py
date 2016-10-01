@@ -4,7 +4,7 @@
 from sys import *
 
 notcc = ' \n!"\'#$%&()*+,-./:;<=>?@[\\]^_`{|}~'
-n = 0
+num = 0
 
 def usage():
     print "usage: " + argv[0] + " <filename>"
@@ -15,10 +15,10 @@ if len(argv) < 2:
 
 try:
     for line in open(argv[1]):
-        n += len(line.decode("utf-8"))
+        num += len(line.decode("utf-8"))
         for c in line:
             if c in notcc:
-                n -= 1
-    print n
+                num -= 1
+    print num
 except IOError:
     usage()
